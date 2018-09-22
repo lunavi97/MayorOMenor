@@ -8,7 +8,7 @@
         maxGenerador = 100
         bits = 1000
         ChangeBitsLabel(bits)
-        CantidadApostar.Minimum = 1
+        CantidadApostar.Minimum = 0
         ChangeMaximumOfCantidadApostar(bits)
         CantidadApostar.Value = PromedioDeRangoDeApuestas()
         numeroGenerado = 50
