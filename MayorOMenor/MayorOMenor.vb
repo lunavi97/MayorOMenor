@@ -68,8 +68,9 @@
     End Function
 
     Private Function ApuestaGanada(actual As Integer, anterior As Integer) As Boolean
-        Return actual > anterior And MayorSel.Checked Or
-            actual < anterior And MenorSel.Checked
+        Dim mayorAcertado As Boolean = actual > anterior And MayorSel.Checked
+        Dim menorAcertado As Boolean = actual < anterior And MenorSel.Checked
+        Return mayorAcertado Or menorAcertado
     End Function
 
     Private Function PromedioDeRangoDeApuestas() As Integer
