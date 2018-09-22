@@ -39,10 +39,10 @@
         Dim numeroAComparar As Integer = numeroGenerado
         numeroGenerado = GenerarNumeroAleatorio(minGenerador, maxGenerador)
         If ApuestaGanada(numeroGenerado, numeroAComparar) Then
-            MsgBox("Ganaste " + Format(CantidadApostar.Value) + " bits")
+            MensajeVictoria(bits)
             bits += CantidadApostar.Value
         Else
-            MsgBox("Perdiste " + Format(CantidadApostar.Value) + " bits")
+            MensajeDerrota(bits)
             bits -= CantidadApostar.Value
         End If
 
@@ -50,6 +50,16 @@
         CantidadApostar.Value = PromedioDeRangoDeApuestas()
         ChangeBitsLabel(bits)
         ChangeTextOfGroupBox(numeroGenerado)
+    End Sub
+
+    Private Sub MensajeVictoria(bits As Integer)
+        MsgBox("Ganaste " + Format(CantidadApostar.Value) + " bits",
+               MsgBoxStyle.Information, "Mensaje")
+    End Sub
+
+    Private Sub MensajeDerrota(bits As Integer)
+        MsgBox("Perdiste " + Format(CantidadApostar.Value) + " bits",
+               MsgBoxStyle.Critical, "Mensaje")
     End Sub
 
     Private Function GenerarNumeroAleatorio(min As Integer, max As Integer) As Integer
