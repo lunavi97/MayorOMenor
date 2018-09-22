@@ -1,5 +1,25 @@
 ﻿Public Class MayorOMenor
-    Private Sub ApostarText_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ApostarText.KeyPress
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    Private bits As Integer
+    Private numeroGenerado As Integer
+
+    Private Sub MayorOMenor_Load(sender As Object, e As EventArgs) Handles Me.Load
+        bits = 1000
+        ChangeBitsLabel(bits)
+        CantidadApostar.Minimum = 1
+        ChangeMaximumOfCantidadApostar(bits)
+        numeroGenerado = 50
+        ChangeTextOfGroupBox(numeroGenerado)
+    End Sub
+
+    Private Sub ChangeBitsLabel(bits As Integer)
+        BitsLabel.Text = "Bits: " + Format(bits)
+    End Sub
+
+    Private Sub ChangeMaximumOfCantidadApostar(max As Integer)
+        CantidadApostar.Maximum = max
+    End Sub
+
+    Private Sub ChangeTextOfGroupBox(num As Integer)
+        GroupBox.Text = "¿El número siguiente es mayor o menor a " + Format(num) + "?"
     End Sub
 End Class
