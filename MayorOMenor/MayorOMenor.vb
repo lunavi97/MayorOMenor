@@ -38,7 +38,10 @@
 
         Dim numeroAComparar As Integer = numeroGenerado
         numeroGenerado = GenerarNumeroAleatorio(minGenerador, maxGenerador)
-        If ApuestaGanada(numeroGenerado, numeroAComparar) Then
+        If numeroGenerado = numeroAComparar Then
+            MsgBox("Salió el mismo número", MsgBoxStyle.Exclamation, "Mensaje")
+            Return
+        ElseIf ApuestaGanada(numeroGenerado, numeroAComparar) Then
             MensajeVictoria(bits)
             bits += CantidadApostar.Value
         Else
