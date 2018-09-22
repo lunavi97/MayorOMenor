@@ -37,8 +37,7 @@
 
         Dim numeroAComparar As Integer = numeroGenerado
         numeroGenerado = GenerarNumeroAleatorio(minGenerador, maxGenerador)
-        If numeroGenerado > numeroAComparar And MayorSel.Checked Or
-                numeroGenerado < numeroAComparar And MenorSel.Checked Then
+        If ApuestaGanada(numeroGenerado, numeroAComparar) Then
             MsgBox("Ganaste " + Format(CantidadApostar.Value) + " bits")
         Else
             MsgBox("Perdiste " + Format(CantidadApostar.Value) + " bits")
@@ -48,5 +47,10 @@
     Private Function GenerarNumeroAleatorio(min As Integer, max As Integer) As Integer
         Randomize()
         Return CInt(Int((max * Rnd()) + min))
+    End Function
+
+    Private Function ApuestaGanada(actual As Integer, anterior As Integer) As Boolean
+        Return actual > anterior And MayorSel.Checked Or
+            actual < anterior And MenorSel.Checked
     End Function
 End Class
