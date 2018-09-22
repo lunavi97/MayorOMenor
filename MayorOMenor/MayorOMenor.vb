@@ -16,7 +16,7 @@
     End Sub
 
     Private Sub ChangeBitsLabel(bits As Integer)
-        BitsLabel.Text = "Bits: " + Format(bits)
+        BitsLabel.Text = "Bits: " & bits
     End Sub
 
     Private Sub ChangeMaximumOfCantidadApostar(max As Integer)
@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub ChangeTextOfGroupBox(num As Integer)
-        GroupBox.Text = "¿El número siguiente es mayor o menor a " + Format(num) + "?"
+        GroupBox.Text = "¿El número siguiente es mayor o menor a " & num & "?"
     End Sub
 
     Private Sub ApostarButton_Click(sender As Object, e As EventArgs) Handles ApostarButton.Click
@@ -53,12 +53,12 @@
     End Sub
 
     Private Sub MensajeVictoria(bits As Integer)
-        MsgBox("Ganaste " + Format(CantidadApostar.Value) + " bits",
+        MsgBox("Ganaste " & CantidadApostar.Value & " bits",
                MsgBoxStyle.Information, "Mensaje")
     End Sub
 
     Private Sub MensajeDerrota(bits As Integer)
-        MsgBox("Perdiste " + Format(CantidadApostar.Value) + " bits",
+        MsgBox("Perdiste " & CantidadApostar.Value & " bits",
                MsgBoxStyle.Critical, "Mensaje")
     End Sub
 
