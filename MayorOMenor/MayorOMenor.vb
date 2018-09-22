@@ -10,6 +10,7 @@
         ChangeBitsLabel(bits)
         CantidadApostar.Minimum = 1
         ChangeMaximumOfCantidadApostar(bits)
+        CantidadApostar.Value = PromedioDeRangoDeApuestas()
         numeroGenerado = 50
         ChangeTextOfGroupBox(numeroGenerado)
     End Sub
@@ -39,9 +40,16 @@
         numeroGenerado = GenerarNumeroAleatorio(minGenerador, maxGenerador)
         If ApuestaGanada(numeroGenerado, numeroAComparar) Then
             MsgBox("Ganaste " + Format(CantidadApostar.Value) + " bits")
+            bits += CantidadApostar.Value
         Else
             MsgBox("Perdiste " + Format(CantidadApostar.Value) + " bits")
+            bits -= CantidadApostar.Value
         End If
+
+        ChangeMaximumOfCantidadApostar(bits)
+        CantidadApostar.Value = PromedioDeRangoDeApuestas()
+        ChangeBitsLabel(bits)
+        ChangeTextOfGroupBox(numeroGenerado)
     End Sub
 
     Private Function GenerarNumeroAleatorio(min As Integer, max As Integer) As Integer
@@ -52,5 +60,9 @@
     Private Function ApuestaGanada(actual As Integer, anterior As Integer) As Boolean
         Return actual > anterior And MayorSel.Checked Or
             actual < anterior And MenorSel.Checked
+    End Function
+
+    Private Function PromedioDeRangoDeApuestas() As Integer
+        Return CantidadApostar.Maximum / 2
     End Function
 End Class
