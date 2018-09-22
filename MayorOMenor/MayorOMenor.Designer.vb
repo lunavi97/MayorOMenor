@@ -27,7 +27,7 @@ Partial Class MayorOMenor
         Me.MenorButton = New System.Windows.Forms.RadioButton()
         Me.GroupBox = New System.Windows.Forms.GroupBox()
         Me.ApostarLabel = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ApostarText = New System.Windows.Forms.TextBox()
         Me.ApostarButton = New System.Windows.Forms.Button()
         Me.GroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -86,13 +86,13 @@ Partial Class MayorOMenor
         Me.ApostarLabel.TabIndex = 4
         Me.ApostarLabel.Text = "Bits a apostar: "
         '
-        'TextBox1
+        'ApostarText
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Liberation Sans", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(229, 210)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 23)
-        Me.TextBox1.TabIndex = 5
+        Me.ApostarText.Font = New System.Drawing.Font("Liberation Sans", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ApostarText.Location = New System.Drawing.Point(229, 210)
+        Me.ApostarText.Name = "ApostarText"
+        Me.ApostarText.Size = New System.Drawing.Size(100, 23)
+        Me.ApostarText.TabIndex = 5
         '
         'ApostarButton
         '
@@ -110,7 +110,7 @@ Partial Class MayorOMenor
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(584, 261)
         Me.Controls.Add(Me.ApostarButton)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.ApostarText)
         Me.Controls.Add(Me.ApostarLabel)
         Me.Controls.Add(Me.GroupBox)
         Me.Controls.Add(Me.BitsLabel)
@@ -129,6 +129,6 @@ Partial Class MayorOMenor
     Friend WithEvents MenorButton As RadioButton
     Friend WithEvents GroupBox As GroupBox
     Friend WithEvents ApostarLabel As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ApostarText As TextBox
     Friend WithEvents ApostarButton As Button
 End Class
